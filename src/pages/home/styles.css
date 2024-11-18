@@ -1,0 +1,205 @@
+.tr, .tr-saida, .tr-estoque { 
+    display: grid; 
+    width: 99.8%; 
+}
+
+.tr { 
+    grid-template-columns: 1fr 1fr 3fr 1.5fr 2fr 2fr 1fr 1.5fr; 
+}
+
+.tr-saida { 
+    grid-template-columns: 1fr 1fr 3fr 1.5fr 1.5fr 1.5fr 1.3fr; 
+}
+
+.tr-estoque { 
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr 1.5fr 1.5fr 1.2fr; 
+}
+
+.align-left, .align-left-slim, .align-center, .align-right {
+  display: flex; 
+  height: 25px; 
+  align-items: center; 
+  padding: 5px;
+}
+
+.align-left, .align-left-slim { 
+    justify-content: left; 
+}
+
+.align-center { 
+    justify-content: center; 
+}
+
+.align-right { 
+    justify-content: right; 
+}
+
+.align-left { 
+    font-weight: 600; 
+}
+
+.body::-webkit-scrollbar { 
+    width: 5px; 
+    height: 5px;
+}
+
+.body::-webkit-scrollbar-thumb { 
+    border-radius: 50px; 
+    background: rgba(51,63,212,1); 
+}
+
+.body::-webkit-scrollbar-thumb:hover, .body::-webkit-scrollbar-button:hover { 
+    cursor: pointer; 
+}
+
+.body::-webkit-scrollbar-track { 
+    background: #ededed; 
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:decrement,
+.body::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-position: center;
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:decrement { 
+    height: 10px; 
+    background-color: rgb(128, 128, 128);
+    border-radius: 2px;
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:decrement:hover { 
+    background-color: rgb(178, 178, 178)
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:decrement:active { 
+    background-color: rgb(228, 228, 228)
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:increment { 
+    height: 10px; 
+    border-radius: 2px;
+    background-color: rgb(128, 128, 128)
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:increment:hover { 
+    background-color: rgb(178, 178, 178)
+}
+
+.body::-webkit-scrollbar-button:single-button:vertical:increment:active { 
+    background-color: rgb(228, 228, 228)
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:decrement { 
+    height: 10px; 
+    background-color: rgb(128, 128, 128);
+    border-radius: 2px;
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:decrement:hover { 
+    background-color: rgb(178, 178, 178)
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:decrement:active { 
+    background-color: rgb(228, 228, 228)
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:increment { 
+    height: 10px; 
+    border-radius: 2px;
+    background-color: rgb(128, 128, 128)
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:increment:hover { 
+    background-color: rgb(178, 178, 178)
+}
+
+.body::-webkit-scrollbar-button:single-button:horizontal:increment:active { 
+    background-color: rgb(228, 228, 228)
+}
+
+.table, .table-saida, .table-estoque {
+    border: 0; 
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px 1px black; 
+    width: 100%; 
+}
+
+.result td, .result th { 
+    border-bottom: 1px solid black; 
+}
+
+.result .align-right { 
+    background: rgba(71, 114, 255, 0.473); 
+}
+
+.result {
+    background-color: aliceblue;
+}
+
+.thead {
+    position: sticky;
+}
+
+.body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+@media print {
+
+  @page { 
+    size: landscape; 
+    margin: 0; 
+    }
+
+  body * { 
+    visibility: hidden; 
+    overflow: visible; 
+    height: auto; 
+    }
+
+  .table-estoque, .table-saida, .table, .table-estoque *, .table-saida *, .table * { 
+    visibility: visible; 
+    overflow: visible; 
+    height: auto; 
+    }
+
+  .table-estoque, .table-saida, .table { 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    overflow: visible !important;
+    height: auto;
+    display: block;
+    }
+
+  .result td, .result th { 
+    border-bottom: 1px solid black !important; 
+    box-sizing: border-box; 
+    }
+}
+
+@media (max-width: 800px) {
+
+    .body{
+        overflow-x: scroll;
+        overflow-y: scroll;
+        flex: 1;
+    }
+
+    .thead {     
+        overflow-y: hidden;
+        width: 100%;
+    }
+
+    .tr-saida, .tr-estoque { 
+        width: 285%;     
+        white-space: nowrap;    
+    }
+    
+    .tr {
+        width: max-content;
+        white-space: nowrap;
+    }
+}
